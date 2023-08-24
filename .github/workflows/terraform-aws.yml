@@ -16,7 +16,10 @@ jobs:
            uses: hashicorp/setup-terraform@v1
 
          - name: Terraform Init
+           working-directory: ./pipeline-aws
            run: terraform init -reconfigure
+           
 
          - name: Terraform-apply
+           working-directory: ./pipeline-aws
            run: terraform apply -auto-approve -input=false
